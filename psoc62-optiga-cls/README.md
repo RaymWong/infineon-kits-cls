@@ -31,7 +31,7 @@ Hardware platforms and boards:
 
 - PSoC62 adaptor board
 
-  ![](C:\Users\yeying\UserData\ying-github\infineon-kits-cls\psoc62-optiga-cls\pictures\psoc62+trustm.png)
+  ![](\psoc62-optiga-cls\pictures\psoc62+trustm.png)
 
 Connect the KitProg3 USB port to computer.
 
