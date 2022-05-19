@@ -26,10 +26,12 @@ Following is the software tools required :
 Hardware platforms and boards:
 
 - [Infineon’s PSoC62  Wi-Fi BT Prototyping Kit](https://www.cypress.com/documentation/development-kitsboards/psoc-6-wi-fi-bt-prototyping-kit-cy8cproto-062-4343w)
+
 - [OPTIGA™ Trust M](https://www.infineon.com/cms/en/product/evaluation-boards/s2go-security-optiga-m/)
+
 - PSoC62 adaptor board
 
-![](/pictures/psoc62+trustm.png)
+  ![](C:\Users\yeying\UserData\ying-github\infineon-kits-cls\psoc62-optiga-cls\pictures\psoc62+trustm.png)
 
 Connect the KitProg3 USB port to computer.
 
