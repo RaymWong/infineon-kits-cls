@@ -1,9 +1,7 @@
-# Infineon  "Secured IOT Connectivity Kit"for Cyber Security Labeling Scheme
+# Infineon  "Secured IOT Connectivity Kit"for CyberSecurity Labeling Scheme
 
 1. [About](#about)
     * [Prerequisites](#prerequisites)
-2. [Getting Started](#getting_started)
-    * [Getting the Code from Github](#getting_code)
 3. [Set up the Development Environment](#set_up_env)
 4. [Set up your AWS account and Permissions](#set_up_aws)
 5. [Import the project into ModusToolbox](#import)
@@ -14,14 +12,6 @@
     * [Using your own key and Certificate(Using Raspberry pi to auto provision to aws](#auto_gen)
 
 ## <a name="about"></a>About
-
-The “Cybersecurity Labeling Scheme” (CLS)[source link: https://www.csa.gov.sg/Programmes/certification-and-labelling-schemes/cybersecurity-labelling-scheme/about-cls] introduced by “Cybersecurity Agency of Singapore” (CSA) aims to raise the security level of consumer devices and make it easier for layman consumers to identify the security level of the devices.
-
-Infineon Technologies, being an industry leader in providing connected secured solutions to the IoT market, aims to provide security solutions and reference implementations that enables customers to meet the security requirements of the CLS.
-
-The objective of the “Secured IOT Connectivity Kit” is to provide guidelines and reference implementation of Security Use Cases to OEMs/ODMs on the integration of OPTIGATM Trust M and PSoC6x for the customers design.
-
-OEMs/ODMs can adopt the guidelines and reference implementations for their security design to implement a robust and secure design to meet the respective requirements of the CLS certification.
 
 The PSoC62 Wi-Fi BT Prototyping Kit (CY8CPROTO-062-4343W) is a low-cost hardware platform that enables design and debug of PSoC 6 MCUs with FreeRTOS and AWS IoT integration. The Cypress PSoC 62 is purpose-built for the IoT, delivering the industry’s lowest power, most flexibility, and built-in security for the IoT.It delivers a dual-core platform with a 150-MHz Arm® Cortex®-M4 as the primary application processor and an 100-MHz Arm Cortex-M0+ as the secondary processor for low-power operation. The kit comes with a PSoC 62 MCU with 2MB of Flash /1MB of SRAM memory, industry-leading CapSense® for touch buttons and slider,on-board debugger/programmer with KitProg3, MicroSD card interface, 512-Mb Quad-SPI NOR flash, PDM microphone, and a thermistor. For wireless connectivity, including dual-band Wi-Fi, it also provides an on-board MurataLBEE5KL1DX module built on the Cypress CYW4343W Wi-Fi / Bluetooth single-chip solution.
 
@@ -39,19 +29,9 @@ Hardware platforms and boards:
 - [OPTIGA™ Trust M](https://www.infineon.com/cms/en/product/evaluation-boards/s2go-security-optiga-m/)
 - PSoC62 adaptor board
 
-![](/pictures/pSoC62+trustm1.png)
+![](/pictures/psoc62+trustm.png)
 
 Connect the KitProg3 USB port to computer.
-
-## <a name="getting_started"></a>Getting Started
-
-### <a name="getting_code"></a>Getting the Code from Github
-
-Getting the initial code from Github with submodules
-
-```console
-foo@bar:~$ git clone --recurse-submodules https://github.com/Infineon/linux-optiga-trust-m.git
-```
 
 ## <a name="set_up_env"></a>Set up the Development Environment 
 
@@ -65,7 +45,7 @@ Before youbegin, download and install the latest [ModusToolbox software](https:/
 
 To create an AWS account, see [Create and Activate an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 
-Toadd an IAM user to your AWS account, see [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/). To grantyour IAM user account access to AWS IoT and FreeRTOS, attach the following IAMpolicies to your IAM user account:
+Toadd an IAM user to your AWS account, see [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/). To grant your IAM user account access to AWS IoT and FreeRTOS, attach the following IAM policies to your IAM user account:
 
 - AmazonFreeRTOSFullAccess
 - AWSIoTFullAccess
@@ -97,7 +77,7 @@ For more information about policies, see [IAM Permissionsand Policies](https://d
 1. Open the Eclipse IDE for ModusToolbox and choose, or create, a     workspace 
 2. In ModusToolbox, choose **File**, and then choose **Import**.     Click **ModusToolbox Application     Import**, then choose **Next**. 
 3. In the **Import****Eclipse IDE for ModusToolbox Project** window, choose **Browse**,In the directory where you unzipped your FreeRTOS download, the demo project islocated in located at \projects\cypress\CY8CPROTO_062_4343W\mtb\aws_demos
-4. Choose **Finish**to import the project into your workspace 
+4. Choose **Finish** to import the project into your workspace 
 5. The `aws_demos` project should be imported into your workspace.
 
 ## <a name="create_thing"></a>Create AWS IoT Thing on AWS IOT console
@@ -158,7 +138,7 @@ For more information about policies, see [IAM Permissionsand Policies](https://d
 
 13.  Go back to **Secure\ Certificate** section
 
-14.  Open thecertificate provisioned, click on **Actions**and click **Attach Policy**
+14.  Open the certificate provisioned, click on **Actions** and click **Attach Policy**
 
 15.  Find the policy name that you created and click on **Attach**
 
@@ -168,9 +148,9 @@ For more information about policies, see [IAM Permissionsand Policies](https://d
 
 #### <a name="initial-config"></a>Initial Configuration
 
-Perform the steps in [Configuringthe FreeRTOS Demos](https://github.com/Infineon/amazon-freertos/blob/feature/trustm/vendors/infineon/boards/xmc4800_plus_optiga_trust_m/freertos-configure.md), but skip the last step (that is, don’t do *To format your AWS IoT credentials*).The net result should be that the `demos/include/aws_clientcredential.h` file has been updated with settings, but the `demos/include/aws_clientcredential_keys.h` file has not.
+Perform the steps in [Configuring the FreeRTOS Demos](https://github.com/Infineon/amazon-freertos/blob/feature/trustm/vendors/infineon/boards/xmc4800_plus_optiga_trust_m/freertos-configure.md), but skip the last step (that is, don’t do *To format your AWS IoT credentials*).The net result should be that the `demos/include/aws_clientcredential.h` file has been updated with settings, but the `demos/include/aws_clientcredential_keys.h` file has not.
 
-The OPTIGA Trust M comes pre-provisioned with a certificate signed with Infineon's    OPTIGA(TM)Trust M CA and a private key, and can make use of the [AWSIoT Multi-Account Registration](https://aws.amazon.com/about-aws/whats-new/2020/04/simplify-iot-device-registration-and-easily-move-devices-between-aws-accounts-with-aws-iot-core-multi-account-registration/) feature. To retrieve the certificate from the OPTIGA Trust M, and register it with AWS IoT using Multi-Account Registration, follow the instructions below.
+The OPTIGA Trust M comes pre-provisioned with a certificate signed with Infineon's    OPTIGA(TM)Trust M CA and a private key, and can make use of the [AWS IoT Multi-Account Registration](https://aws.amazon.com/about-aws/whats-new/2020/04/simplify-iot-device-registration-and-easily-move-devices-between-aws-accounts-with-aws-iot-core-multi-account-registration/) feature. To retrieve the certificate from the OPTIGA Trust M, and register it with AWS IoT using Multi-Account Registration, follow the instructions below.
 
 #### <a name="read-cert"></a>Read out the pre-provision cert from Trust M
 
@@ -245,7 +225,7 @@ You can use the MQTT client in the AWS IoT console to monitor the messages that 
 
 **To subscribe to the MQTT topic with the AWS IoT MQTT client**
 
-1.    Sign in to the [AWSIoT console](https://console.aws.amazon.com/iotv2/).
+1.    Sign in to the [AWS IoT console](https://console.aws.amazon.com/iotv2/).
 2.    In the navigation pane, choose **Test** toopen the MQTT client.
 3.    In **Subscription topic**, enter **iotdemo/topic/#**, and then choose **Subscribe to topic**.
 
@@ -401,8 +381,8 @@ Open the file:
 
 Note: 
 
-1        Make sure thekey slot you use is same with the one you use in the psoc62_auto_provision_to_aws.sh script located in **linux-optiga-trust-m/****ex_psoc62_wifi_bt/perso** folder 
+1        Make sure the key slot you use is same with the one you use in the psoc62_auto_provision_to_aws.sh script located in **linux-optiga-trust-m/ex_psoc62_wifi_bt/perso** folder 
 
-2        Make sure thething name you use is same with the one you use in the psoc62_auto_provision_to_aws.sh script located in **linux-optiga-trust-m/****ex_psoc62_wifi_bt/perso** folder 
+2        Make sure the thing name you use is same with the one you use in the psoc62_auto_provision_to_aws.sh script located in **linux-optiga-trust-m/ex_psoc62_wifi_bt/perso** folder 
 
 Power off and Plug out OPTIGA Trust M Shield2GO board from Raspberry Pi and plug it into PSoC62 platform.
