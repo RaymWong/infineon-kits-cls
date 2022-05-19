@@ -127,11 +127,11 @@ Data inside target OID :
 
 ### <a name="uc4"></a>UC4 - Secured Device Identity
 
-This use case(Performing External Secured Device Identity Verification using TLS as example) is implemented with UC7 together and will showcase how to establish a TLS session with the cloud or server based on the implementation of UC7 using cipher suites.
+This use case(Performing External Secured Device Identity Verification using TLS as example) is implemented with UC5 together and will showcase how to establish a TLS session with the cloud or server based on the implementation of UC5 using cipher suites.
 
 Customer can choose to use Infineon default device certificate (OID: 0xE0E0) or the customer defined device certificate (OID: to be advised by customer) to verify the identity of the device with the cloud and/or server.
 
-The detailed implementation will be shown in UC7 section.
+The detailed implementation are shown in the script under directory UC4-UC5-UC6-UC7.
 
 ### <a name="uc5"></a>UC5 - Secured Key Generation and CSR
 
@@ -181,19 +181,19 @@ w00xyHOx0pEnGUeKh20ze4VEWi5Kgs/gw6t2lwMuQgoCIQDUjk+4+F6+EmyB7ETn
 
 ### <a name="uc6"></a>UC6 - Registration and On-Boarding to Cloud
 
-In this use case, we will use the key and device certificate that was generated in section 5.5. to register the device to the respective cloud service provider.
+In this use case, we will use the key and device certificate that was generated in **step1_generate_keys.sh** to register the device to the respective cloud service provider.
 
-As the cloud registration process is highly dependent on the service provider, weprovide an example using AWS 
+As the cloud registration process is highly dependent on the service provider, we provide an example using AWS 
 
-Please refer to the 
+Please refer to the README under directory **infineon-kits-cls/psoc62-optiga-cls**
 
 ### <a name="uc7"></a>UC7 - Establishing Secured Communication to Cloud
 
 In this use case, we will use the key and device certificate that was generated in section 5.5. to register the device to the respective cloud service provider.
 
-As the cloud registration process is highly dependent on the service provider, weprovide an example using AWS 
+As the cloud registration process is highly dependent on the service provider, we provide an example using AWS 
 
-Please refer to the 
+Please refer to the README under directory **infineon-kits-cls/psoc62-optiga-cls**
 
 ### <a name="uc8"></a>UC8 - Decommissioning
 
